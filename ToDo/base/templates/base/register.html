@@ -1,0 +1,47 @@
+{% extends 'base/main.html' %}
+
+
+{% block title %} New account {% endblock title%}
+
+{% block content %}
+
+<div class="container" id="container">
+    <div class="form-container sign-up-container">
+        <form method="POST">
+            {% csrf_token %}
+        </br><h1>Create Account</h1>
+            <div class="social-container">
+
+            
+            {% csrf_token %}
+            <label for="id_username">Username:</label>{{ form.username }}</br>
+            <label for="id_password1">Password:</label>{{ form.password1 }}</br>
+            <label for="id_password2">Confirm Password:</label>{{ form.password2 }}</br></br>
+            <input class="btn-s" type="submit" value="Sign up">
+        
+            <!-- <input type="text" placeholder="Name" />
+            <input type="email" placeholder="Email" />
+            <input type="password" placeholder="Password" />
+            <button>Sign Up</button> -->
+        </form>
+    </div>
+</div>
+    <div class="overlay-container">
+        <div class="overlay">
+            <div class="overlay-panel overlay-left">
+                <h1>Get a Account Instantly!</h1></br>
+                <img class="logo" src="https://cdn2.iconfinder.com/data/icons/material-design-i-filled-line/614/2928_-_Alarm-512.png">
+                <h6><b><i>"&nbsp; PLAN YOUR WORK FOR TODAY AND EVERYDAY,</br>THEN WORK YOUR PLAN &nbsp;"</i></b></h6></br></br>
+                <strong>Already have an account?</strong>
+              <a class="" href="{% url 'user-login' %}" ><input type="button" class="sign-in" value="SIGN IN"></a>
+            </div>
+        </div>
+    
+    </div>
+
+</div>
+
+
+
+
+{% endblock content %}

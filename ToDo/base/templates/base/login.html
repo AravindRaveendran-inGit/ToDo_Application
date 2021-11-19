@@ -1,0 +1,35 @@
+{% extends 'base/main.html' %}
+{% block title %} Sign In {% endblock title%}
+{% block content %}
+<div class="container" id="container">
+    <div class="form-container sign-up-container">
+<form method="POST">
+    {% csrf_token %}
+    <img class="logo" src="https://cdn.iconscout.com/icon/premium/png-256-thumb/todo-list-1900336-1608438.png" style="height:60px;"></br>
+    <h1>Log In to your Account!</h1>
+    <div class="social-container">
+        <label for="id_username">Username:</label>{{ form.username }}</br>
+        <label for="id_password1">Password:</label>{{ form.password}}</br></br>
+        <input class="btn-s" type="submit" value="Sign In">
+    
+        
+    </form>
+</div>
+</div>
+<div class="overlay-container">
+    <div class="overlay">
+        <div class="overlay-panel overlay-left">
+        </br> <h1>Future starts here :)</h1></br></br>
+
+            <img class="logo" src="https://cdn.iconscout.com/icon/premium/png-256-thumb/future-2810761-2335558.png" style="height: 120px;"></br></br>
+            <h6><b><i>"&nbsp; A goal without a plan is just a wish &nbsp;"</i></b></h6></br>
+            <strong>Don't have an account?</strong>
+          <a class="" href="{% url 'register' %}" ><input type="button" class="sign-in" value="SIGN UP"></a>
+        </div>
+    </div>
+
+</div>
+
+</div>
+
+{% endblock content %}
